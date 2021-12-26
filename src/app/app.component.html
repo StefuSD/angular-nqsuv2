@@ -1,0 +1,56 @@
+<div class='container'>
+		<!-- single one -->
+		<!-- single three -->
+		<div>
+			<!-- Range Slider Start -->
+			<!-- <aside class="left_widgets p_filter_widgets price_rangs_aside sidebar_box_shadow">
+                  <h4>Prix</h4>
+                <ng5-slider [(value)]="minValue" [(highValue)]="maxValue" [options]="options" (highValueChange)="showPriceValue()"  ></ng5-slider>
+
+              </aside> -->
+			<!-- Range Slider End -->
+		</div>
+		<br>
+		<div>
+			<div class="small-section-tittle2">
+				<h4>Posted Within</h4>
+			</div>
+			<label *ngFor="let duration of durations" class="container">{{duration.name}}
+        <input type="checkbox" (change)="onChangeUploadedDate($event, duration)">
+        <span class="checkmark"></span>
+      </label>
+		</div>
+
+		<div>
+			<div class="small-section-tittle2">
+				<h4>Vehicule</h4>
+			</div>
+			<label *ngFor="let vehicule of vehicules" class="container">{{vehicule.name}}
+          <input type="checkbox" (change)="onChangeVehicule($event, vehicule)">
+          <span class="checkmark"></span>
+        </label>
+		</div>
+</div>
+
+<h3>List of datas returned</h3>
+<table class="table">
+	<thead>
+		<tr>
+			<th scope="col">#</th>
+			<th scope="col">titre</th>
+			<th scope="col">price range</th>
+			<th scope="col">date</th>
+			<th scope="col">type</th>
+		</tr>
+	</thead>
+	<tbody *ngFor="let data of filteredData">
+		<tr>
+			<th scope="row">{{data.id }}</th>
+			<td>{{data.titre }}</td>
+			<td>{{data.price_range }}</td>
+			<td>{{data.date | date}}</td>
+			<td>{{data.type}}</td>
+		</tr>
+
+	</tbody>
+</table>
